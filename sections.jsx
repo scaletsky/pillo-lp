@@ -635,31 +635,37 @@ function Features() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: 16 }}>
           {/* Big card */}
           <div className="reveal features-big" style={{
-            gridColumn: 'span 7',
+            gridColumn: 'span 12',
             background: T.deepPurple, borderRadius: 28, padding: 36,
             color: T.white,
+            display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.1fr)',
+            gap: 40, alignItems: 'center',
           }}>
-            <div style={{
-              width: 46, height: 46, borderRadius: 15,
-              background: 'rgba(197,184,240,0.18)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              marginBottom: 18, color: T.lavanda,
-            }}>
-              <MoonIcon/>
+            <div>
+              <div style={{
+                width: 46, height: 46, borderRadius: 15,
+                background: 'rgba(197,184,240,0.18)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                marginBottom: 18, color: T.lavanda,
+              }}>
+                <MoonIcon/>
+              </div>
+              <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 26, fontWeight: 600, color: T.white, marginBottom: 10 }}>
+                Proteção do sono
+              </h3>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: 'rgba(255,255,255,0.62)', lineHeight: 1.7, maxWidth: 420 }}>
+                Nenhum remédio entre 00h e 06h. Sua noite de sono é sagrada — e essencial para cuidar bem do seu pet.
+              </p>
             </div>
-            <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 26, fontWeight: 600, color: T.white, marginBottom: 10 }}>
-              Proteção do sono
-            </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: 'rgba(255,255,255,0.62)', lineHeight: 1.7, maxWidth: 380 }}>
-              Nenhum remédio entre 00h e 06h. Sua noite de sono é sagrada — e essencial para cuidar bem do seu pet.
-            </p>
-            <SleepBar/>
+            <div style={{ minWidth: 0 }}>
+              <SleepBar/>
+            </div>
           </div>
 
           {/* Small cards */}
           {small.map((f, i) => (
-            <div key={i} className={`reveal reveal-d${(i % 2) + 1} features-sm`} style={{
-              gridColumn: 'span 5',
+            <div key={i} className={`reveal reveal-d${(i % 4) + 1} features-sm`} style={{
+              gridColumn: 'span 3',
               background: f.bg, borderRadius: 24, padding: 24,
               transition: 'transform 0.2s ease',
             }}
